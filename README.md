@@ -1,3 +1,3 @@
 # FluffyBird
 
-All sourcecode and Images are licencesed under the Creative Common Licence CC BY.
+All sourcecode and images are licencesed under the Creative Common Licence CC BY.
