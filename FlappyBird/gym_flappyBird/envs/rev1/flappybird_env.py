@@ -162,9 +162,9 @@ class birdEnv(gym.Env):
         #        print(acts)
         	state_old = state
 
-        	state, done, _ = self.step(act_prob)
+        	state, _, done, _ = self.step(act_prob)
         	reward += computeReward(state_old, state)
-        	self.render(str(num_pop), str("%.1f" % reward))
+        	self.render()
     	return reward
 
     def seed(self, seed=None):
@@ -208,7 +208,8 @@ class birdEnv(gym.Env):
                     self.pipes.pop(0)
 
         state = self.getState()
-        return state, self.done, {}
+        
+        return state, 0, self.done, {},
 
     def getState(self):
         pipes_sorted = sorted(self.pipes, key=lambda p: p.pos)
@@ -231,7 +232,7 @@ class birdEnv(gym.Env):
 
         return self.getState()
 
-    def render(self, num_pop, score, mode='human', close=True):
+    def render(self, mode="human", **kwargs):
         self.fps_timer.tick(self.max_FPS)
         self.window.fill((0, 0, 30))
         #self.window.fill(self.background)
@@ -241,14 +242,14 @@ class birdEnv(gym.Env):
         self.bird.render(self.window)
         for pipe in self.pipes:
             pipe.render(self.window, self.bird.X )
-        self.text_pop = self.font.render("Population: " + num_pop, True, (255, 255, 255))
-        self.text_score = self.font.render("Score: " + score, True, (255, 255, 255))
+       # self.text_pop = self.font.render("Population: " + num_pop, True, (255, 255, 255))
+       # self.text_score = self.font.render("Score: " + score, True, (255, 255, 255))
 
-        self.window.blit(self.text_pop,
-                    (self.screen_width - self.text_pop.get_width() - 20,   self.text_pop.get_height() +10 ))
+        #self.window.blit(self.text_pop,
+         #           (self.screen_width - self.text_pop.get_width() - 20,   self.text_pop.get_height() +10 ))
 
-        self.window.blit(self.text_score,
-                    (self.screen_width - 110,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
+        #self.window.blit(self.text_score,
+         #           (self.screen_width - 110,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
 
         pygame.display.flip()
 

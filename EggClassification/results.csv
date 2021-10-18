@@ -1,61 +1,151 @@
 Filename,Predictions
-S2_Ellipse/SCAN0182.JPG,S2_Ellipse
-S2_Ellipse/SCAN0183.JPG,S2_Tropfen
-S2_Ellipse/SCAN0184.JPG,S2_Tropfen
-S2_Ellipse/SCAN0185.JPG,S2_Ellipse
-S2_Ellipse/SCAN0186.JPG,S2_Ellipse
-S2_Ellipse/SCAN0187.JPG,S2_Tropfen
-S2_Ellipse/SCAN0188.JPG,S2_Ellipse
-S2_Ellipse/SCAN0189.JPG,S2_Ellipse
-S2_Ellipse/SCAN0190.JPG,S2_Rund
-S2_Ellipse/SCAN0191.JPG,S2_Rund
-S2_Ellipse/SCAN0192.JPG,S2_Rund
-S2_Ellipse/SCAN0193.JPG,S2_Rund
-S2_Ellipse/SCAN0194.JPG,S2_Rund
-S2_Ellipse/SCAN0195.JPG,S2_Rund
-S2_Ellipse/SCAN0196.JPG,S2_Rund
-S2_Ellipse/SCAN0197.JPG,S2_Rund
-S2_Ellipse/SCAN0198.JPG,S2_Rund
-S2_Ellipse/SCAN0199.JPG,S2_Rund
-S2_Ellipse/SCAN0200.JPG,S2_Rund
-S2_Ellipse/SCAN0201.JPG,S2_Rund
-S2_Rund/SCAN0063.JPG,S2_Rund
-S2_Rund/SCAN0064.JPG,S2_Rund
-S2_Rund/SCAN0065.JPG,S2_Rund
-S2_Rund/SCAN0066.JPG,S2_Rund
-S2_Rund/SCAN0067.JPG,S2_Rund
-S2_Rund/SCAN0068.JPG,S2_Rund
-S2_Rund/SCAN0069.JPG,S2_Rund
-S2_Rund/SCAN0070.JPG,S2_Rund
-S2_Rund/SCAN0071.JPG,S2_Tropfen
-S2_Rund/SCAN0072.JPG,S2_Tropfen
-S2_Rund/SCAN0073.JPG,S2_Tropfen
-S2_Rund/SCAN0074.JPG,S2_Tropfen
-S2_Rund/SCAN0075.JPG,S2_Tropfen
-S2_Rund/SCAN0076.JPG,S2_Tropfen
-S2_Rund/SCAN0077.JPG,S2_Tropfen
-S2_Rund/SCAN0078.JPG,S2_Tropfen
-S2_Rund/SCAN0079.JPG,S2_Tropfen
-S2_Rund/SCAN0080.JPG,S2_Tropfen
-S2_Rund/SCAN0081.JPG,S2_Ellipse
-S2_Rund/SCAN0082.JPG,S2_Tropfen
-S2_Tropfen/SCAN0288.JPG,S2_Tropfen
-S2_Tropfen/SCAN0289.JPG,S2_Tropfen
-S2_Tropfen/SCAN0290.JPG,S2_Tropfen
-S2_Tropfen/SCAN0291.JPG,S2_Tropfen
-S2_Tropfen/SCAN0292.JPG,S2_Tropfen
-S2_Tropfen/SCAN0293.JPG,S2_Tropfen
-S2_Tropfen/SCAN0294.JPG,S2_Tropfen
-S2_Tropfen/SCAN0295.JPG,S2_Tropfen
-S2_Tropfen/SCAN0296.JPG,S2_Ellipse
-S2_Tropfen/SCAN0297.JPG,S2_Ellipse
-S2_Tropfen/SCAN0298.JPG,S2_Tropfen
-S2_Tropfen/SCAN0299.JPG,S2_Ellipse
-S2_Tropfen/SCAN0300.JPG,S2_Ellipse
-S2_Tropfen/SCAN0301.JPG,S2_Ellipse
-S2_Tropfen/SCAN0302.JPG,S2_Ellipse
-S2_Tropfen/SCAN0303.JPG,S2_Ellipse
-S2_Tropfen/SCAN0304.JPG,S2_Ellipse
-S2_Tropfen/SCAN0305.JPG,S2_Ellipse
-S2_Tropfen/SCAN0306.JPG,S2_Ellipse
-S2_Tropfen/SCAN0307.JPG,S2_Ellipse
+duck/duck (1).PNG,duck
+duck/duck (10).PNG,duck
+duck/duck (11).PNG,duck
+duck/duck (12).PNG,duck
+duck/duck (13).PNG,duck
+duck/duck (14).PNG,duck
+duck/duck (15).PNG,duck
+duck/duck (16).PNG,duck
+duck/duck (17).PNG,duck
+duck/duck (18).PNG,duck
+duck/duck (19).PNG,duck
+duck/duck (2).PNG,duck
+duck/duck (20).PNG,duck
+duck/duck (21).PNG,duck
+duck/duck (22).PNG,duck
+duck/duck (23).PNG,duck
+duck/duck (24).PNG,duck
+duck/duck (25).PNG,duck
+duck/duck (26).PNG,duck
+duck/duck (27).PNG,duck
+duck/duck (28).PNG,duck
+duck/duck (29).PNG,duck
+duck/duck (3).PNG,duck
+duck/duck (30).PNG,duck
+duck/duck (31).PNG,duck
+duck/duck (32).PNG,sparrow
+duck/duck (33).PNG,duck
+duck/duck (34).PNG,duck
+duck/duck (35).PNG,duck
+duck/duck (36).PNG,duck
+duck/duck (37).PNG,duck
+duck/duck (38).PNG,duck
+duck/duck (39).PNG,duck
+duck/duck (4).PNG,duck
+duck/duck (40).PNG,duck
+duck/duck (41).PNG,duck
+duck/duck (42).PNG,duck
+duck/duck (43).PNG,duck
+duck/duck (44).PNG,duck
+duck/duck (45).PNG,duck
+duck/duck (46).PNG,duck
+duck/duck (47).PNG,duck
+duck/duck (48).PNG,duck
+duck/duck (49).PNG,sparrow
+duck/duck (5).PNG,duck
+duck/duck (50).PNG,duck
+duck/duck (6).PNG,duck
+duck/duck (7).PNG,duck
+duck/duck (8).PNG,duck
+duck/duck (9).PNG,duck
+eagle/eagle (1).PNG,eagle
+eagle/eagle (10).PNG,eagle
+eagle/eagle (11).PNG,eagle
+eagle/eagle (12).PNG,eagle
+eagle/eagle (13).PNG,eagle
+eagle/eagle (14).PNG,eagle
+eagle/eagle (15).PNG,eagle
+eagle/eagle (16).PNG,eagle
+eagle/eagle (17).PNG,eagle
+eagle/eagle (18).PNG,eagle
+eagle/eagle (19).PNG,eagle
+eagle/eagle (2).PNG,eagle
+eagle/eagle (20).PNG,eagle
+eagle/eagle (21).PNG,sparrow
+eagle/eagle (22).PNG,eagle
+eagle/eagle (23).PNG,eagle
+eagle/eagle (24).PNG,eagle
+eagle/eagle (25).PNG,eagle
+eagle/eagle (26).PNG,eagle
+eagle/eagle (27).PNG,eagle
+eagle/eagle (28).PNG,eagle
+eagle/eagle (29).PNG,eagle
+eagle/eagle (3).PNG,eagle
+eagle/eagle (30).PNG,eagle
+eagle/eagle (31).PNG,eagle
+eagle/eagle (32).PNG,eagle
+eagle/eagle (33).PNG,eagle
+eagle/eagle (34).PNG,eagle
+eagle/eagle (35).PNG,eagle
+eagle/eagle (36).PNG,eagle
+eagle/eagle (37).PNG,eagle
+eagle/eagle (38).PNG,eagle
+eagle/eagle (39).PNG,eagle
+eagle/eagle (4).PNG,eagle
+eagle/eagle (40).PNG,eagle
+eagle/eagle (41).PNG,eagle
+eagle/eagle (42).PNG,eagle
+eagle/eagle (43).PNG,eagle
+eagle/eagle (44).PNG,eagle
+eagle/eagle (45).PNG,eagle
+eagle/eagle (46).PNG,eagle
+eagle/eagle (47).PNG,eagle
+eagle/eagle (48).PNG,eagle
+eagle/eagle (49).PNG,eagle
+eagle/eagle (5).PNG,eagle
+eagle/eagle (50).PNG,eagle
+eagle/eagle (6).PNG,eagle
+eagle/eagle (7).PNG,eagle
+eagle/eagle (8).PNG,eagle
+eagle/eagle (9).PNG,eagle
+sparrow/sparrow (1).PNG,sparrow
+sparrow/sparrow (10).PNG,sparrow
+sparrow/sparrow (11).PNG,sparrow
+sparrow/sparrow (12).PNG,sparrow
+sparrow/sparrow (13).PNG,sparrow
+sparrow/sparrow (14).PNG,sparrow
+sparrow/sparrow (15).PNG,sparrow
+sparrow/sparrow (16).PNG,sparrow
+sparrow/sparrow (17).PNG,sparrow
+sparrow/sparrow (18).PNG,sparrow
+sparrow/sparrow (19).PNG,sparrow
+sparrow/sparrow (2).PNG,sparrow
+sparrow/sparrow (20).PNG,sparrow
+sparrow/sparrow (21).PNG,sparrow
+sparrow/sparrow (22).PNG,sparrow
+sparrow/sparrow (23).PNG,sparrow
+sparrow/sparrow (24).PNG,sparrow
+sparrow/sparrow (25).PNG,sparrow
+sparrow/sparrow (26).PNG,sparrow
+sparrow/sparrow (27).PNG,sparrow
+sparrow/sparrow (28).PNG,sparrow
+sparrow/sparrow (29).PNG,sparrow
+sparrow/sparrow (3).PNG,sparrow
+sparrow/sparrow (30).PNG,sparrow
+sparrow/sparrow (31).PNG,duck
+sparrow/sparrow (32).PNG,sparrow
+sparrow/sparrow (33).PNG,sparrow
+sparrow/sparrow (34).PNG,sparrow
+sparrow/sparrow (35).PNG,sparrow
+sparrow/sparrow (36).PNG,sparrow
+sparrow/sparrow (37).PNG,sparrow
+sparrow/sparrow (38).PNG,sparrow
+sparrow/sparrow (39).PNG,sparrow
+sparrow/sparrow (4).PNG,sparrow
+sparrow/sparrow (40).PNG,sparrow
+sparrow/sparrow (41).PNG,sparrow
+sparrow/sparrow (42).PNG,sparrow
+sparrow/sparrow (43).PNG,sparrow
+sparrow/sparrow (44).PNG,sparrow
+sparrow/sparrow (45).PNG,sparrow
+sparrow/sparrow (46).PNG,sparrow
+sparrow/sparrow (47).PNG,sparrow
+sparrow/sparrow (48).PNG,sparrow
+sparrow/sparrow (49).PNG,sparrow
+sparrow/sparrow (5).PNG,sparrow
+sparrow/sparrow (50).PNG,sparrow
+sparrow/sparrow (6).PNG,sparrow
+sparrow/sparrow (7).PNG,duck
+sparrow/sparrow (8).PNG,sparrow
+sparrow/sparrow (9).PNG,sparrow

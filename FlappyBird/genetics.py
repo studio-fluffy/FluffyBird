@@ -35,7 +35,7 @@ class Population ():
  #               if(act_prob[0] < act_prob[1]):
  #                   acts = 1
                 state_old = state
-                state, done, _ = env.step(act_prob)
+                state, _, done, _ = env.step(act_prob)
                 #env.render()
                 reward += self.computeReward(state_old, state)
 
@@ -69,7 +69,7 @@ def playWithPopulation(env, pop,generateFeatures, MAX_REWARD, computeReward, num
         #        print(acts)
         state_old = state
 
-        state, done, _ = env.step(act_prob)
+        state, _, done, _ = env.step(act_prob)
         reward += computeReward(state_old, state)
         env.render(str(num_pop), str("%.1f" % reward))
     print (reward)
