@@ -120,7 +120,8 @@ class birdEnv(gym.Env):
 
     def __init__(self):
         pygame.init()
-
+        self.score = 0
+        self.num_pop = 0
         self.font = pygame.font.SysFont("comicsansms", 20)
         self.window = pygame.display.set_mode((self.screen_width, self.screen_height))
         pygame.display.set_caption('Learning bird')
@@ -148,24 +149,24 @@ class birdEnv(gym.Env):
         self.pushPipe()
 
     def playWithNet(self, net, generateFeatures, MAX_REWARD, computeReward, num_pop):
-    	state = self.reset()
-    	reward = 0.0
-    	done = False
-    	while not done and reward < MAX_REWARD:
-        	obs = torch.FloatTensor([generateFeatures(state)])
-        	action = self.action_space.sample()
-        	act_prob = net(obs).data.numpy()[0]
-        	acts = 0
+        state = self.reset()
+        reward = 0.0
+        done = False
+        self.num_pop = num_pop
+        while not done and reward < MAX_REWARD:	
+            obs = torch.FloatTensor([generateFeatures(state)])
+            action = self.action_space.sample()
+            act_prob = net(obs).data.numpy()[0]
+            acts = 0
 #        if (act_prob[0] < act_prob[1]):
 #            acts = 1
-
         #        print(acts)
-        	state_old = state
-
-        	state, _, done, _ = self.step(act_prob)
-        	reward += computeReward(state_old, state)
-        	self.render()
-    	return reward
+            state_old = state
+            state, _, done, _ = self.step(act_prob)
+            reward += computeReward(state_old, state)
+            self.score = reward
+            self.render()
+        return reward
 
     def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
@@ -242,14 +243,14 @@ class birdEnv(gym.Env):
         self.bird.render(self.window)
         for pipe in self.pipes:
             pipe.render(self.window, self.bird.X )
-       # self.text_pop = self.font.render("Population: " + num_pop, True, (255, 255, 255))
-       # self.text_score = self.font.render("Score: " + score, True, (255, 255, 255))
+        self.text_pop = self.font.render("Population: " + str(self.num_pop), True, (255, 255, 255))
+        self.text_score = self.font.render("Score: " + str(self.score), True, (255, 255, 255))
 
-        #self.window.blit(self.text_pop,
-         #           (self.screen_width - self.text_pop.get_width() - 20,   self.text_pop.get_height() +10 ))
+        self.window.blit(self.text_pop,
+                    (self.screen_width - self.text_pop.get_width() - 20,   self.text_pop.get_height() +10 ))
 
-        #self.window.blit(self.text_score,
-         #           (self.screen_width - 110,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
+        self.window.blit(self.text_score,
+                    (self.screen_width - 110,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
 
         pygame.display.flip()
 

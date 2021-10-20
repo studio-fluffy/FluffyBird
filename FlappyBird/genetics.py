@@ -71,7 +71,9 @@ def playWithPopulation(env, pop,generateFeatures, MAX_REWARD, computeReward, num
 
         state, _, done, _ = env.step(act_prob)
         reward += computeReward(state_old, state)
-        env.render(str(num_pop), str("%.1f" % reward))
+        env.num_pop = num_pop
+        env.score += reward
+        env.render()
     print (reward)
 
 def mutate_population(pop, PARENTS_COUNT, NOISE_STD):
