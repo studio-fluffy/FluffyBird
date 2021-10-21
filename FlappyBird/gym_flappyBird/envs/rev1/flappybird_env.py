@@ -16,6 +16,9 @@ def standardAction(decission):
 	return [0.0, decission[0]]
 
 class Pipe:
+    '''
+    Implementierung einer Röhre.
+    ''' 
     def __init__(self, pos,  height, gap, sh):
         self.height = height
         self.gap = gap
@@ -67,6 +70,7 @@ class Bird:
         self.X =  80
         self.Y = 250
         self.speedY = 0
+        self.speedX = 20
         self.rect = pygame.Rect(self.X, self.sh - self.Y, 30,  25)
 
 
