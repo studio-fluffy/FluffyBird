@@ -17,16 +17,24 @@ def standardAction(decission):
 
 class Pipe:
     '''
-    Implementierung einer Röhre.
+    Röhre.
     ''' 
     def __init__(self, pos,  height, gap, sh):
+        '''
+        Setzen von Höhe height, Lücke gap, Position pos und Bildschirmhöhe sh
+        '''
         self.height = height
         self.gap = gap
         self.pos = pos
         self.sh = sh
+
+        #graphische Elemente
         self.rectU = pygame.Rect(pos,0,60,sh-height-gap)
         self.rectD = pygame.Rect(pos,sh - height,60,height)
     def render(self, context, offset):
+        '''Röhre zeichnen
+        https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect
+        '''
         pygame.draw.rect(context, pygame.Color(15,104,47), self.rectD.move(-offset +20, 0))
         pygame.draw.rect(context, pygame.Color(15,104,47), self.rectU.move(-offset +20, 0))
 
@@ -37,7 +45,8 @@ class Bird:
         self.rect = pygame.Rect(self.X, sh - self.Y, 30,  30)
         self.speedY= 0
         self.speedX = 20
-        self.force = [0.0, 0.0] 
+        self.forceX = 0.0 
+        self.forceY = 0.0
         self.birdImg = pygame.image.load('sprites/sparrow/sparrow.png').convert_alpha()
         self.birdImgFlap = pygame.image.load('sprites/sparrow/sparrow_flap.png').convert_alpha()
         self.sh = sh
@@ -47,8 +56,8 @@ class Bird:
 
     def update(self, dt, decission):
         self.action(decission, self)
-        fX = max(0.0,self.force[0])	
-        fY = -10 + max(0.0,self.force[1])
+        fX = self.forceX	
+        fY = -10 + self.forceY
 
         dY = self.speedY*dt + 0.5*fY*dt*dt
         dX = self.speedX*dt + 0.5*fX*dt*dt
@@ -75,9 +84,9 @@ class Bird:
 
 
     def render(self, context):
-        threshold = math.exp(-math.pow(self.force[1],2))
+        threshold = math.exp(-math.pow(self.forceY,2))
         # birdImg = pygame.image.load('sprites/kit-birds.gif').convert_alpha()
-        if(self.force[1] <2):
+        if(self.forceY <2):
 #            pygame.draw.rect(context, pygame.Color(255, 0, 0, 100), self.rect.move(-self.X + 20, 0))
             context.blit(self.birdImg, (20, -self.Y + pygame.display.get_surface().get_size()[1]))
             self.ticks = 0
