@@ -5,13 +5,25 @@ import torch
 import torch.nn as nn
 
 def mutate_net(net, NOISE_STD):
+    '''
+    Addiert auf die Gewichte eines neuronalen Netzes net Zufallswerte der Grössenordnung NOISE_STD
+    '''
+    #Neuronales Netz kopieren 
     new_net = copy.deepcopy(net)
+    
+    #Über die Parameter des neuronalen Netzes itterieren und Zufallswerte addieren
     for p in new_net.parameters():
         noise_t = torch.tensor(np.random.normal(size = p.data.size()).astype(np.float32))
         p.data += NOISE_STD * noise_t
     return new_net
 
+
 class Population ():
+    '''
+    Eine Population besteht aus einer Liste von neuronalen Netzen der Länge POPULATION_SIZE zusammen mit einer Bewertung.
+    Die Bewertung wird duch spielen mit evaluate_on_env auf der Umgebung env berechnet. 
+    Danach kann man mit  playWithFittest das Nettz mit der besten Bewertung auf auf der Umgebung env spielen lassen.
+    '''
     def __init__(self, POPULATION_SIZE, obs_size, action_size, computeReward, net):
         self.POPULATION_SIZE = POPULATION_SIZE
         self.obs_size = obs_size
@@ -28,27 +40,16 @@ class Population ():
             done = False
             while not done and reward <MAX_REWARD:
                 obs = torch.FloatTensor([generateFeatures(state)])
-                #action = env.action_space.sample()
-
-                act_prob = net(obs).data.numpy()[0]
-                acts = 0
- #               if(act_prob[0] < act_prob[1]):
- #                   acts = 1
+                act_prob = net(obs).data.numpy()[0] #
                 state_old = state
                 state, _, done, _ = env.step(act_prob)
-                #env.render()
                 reward += self.computeReward(state_old, state)
-
-                #env.render()
-            #print(reward)
 
             self.population.append([reward, net])
 
         self.population.sort(key=lambda p: p[0], reverse=True)
-  #      print("--")
-  #      for p in self.population:
-  #          print (p[0])
-  #      print("--")
+    
+
     def playWithFittest(self, env, generateFeatures, MAX_REWARD, num_pop):
 #        print(self.population[0][0])
         playWithPopulation(env, self.population[0], generateFeatures, MAX_REWARD, self.computeReward, num_pop)
@@ -74,6 +75,7 @@ def playWithPopulation(env, pop,generateFeatures, MAX_REWARD, computeReward, num
         env.num_pop = num_pop
         env.score += reward
         env.render()
+    env.reset()
     print (reward)
 
 def mutate_population(pop, PARENTS_COUNT, NOISE_STD):
