@@ -270,7 +270,7 @@ class birdEnv(gym.Env):
                     (self.screen_width - self.text_pop.get_width() - 20,   self.text_pop.get_height() +10 ))
 
         self.window.blit(self.text_score,
-                    (self.screen_width - 110,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
+                    (self.screen_width - 140,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
 
         pygame.display.flip()
 
