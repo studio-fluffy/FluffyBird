@@ -39,22 +39,35 @@ class Pipe:
         pygame.draw.rect(context, pygame.Color(15,104,47), self.rectU.move(-offset +20, 0))
 
 class Bird:
+    '''
+    Vogel
+    '''
     def __init__(self, sh):
+        #Position
         self.Y = 250
         self.X = 80
-        self.rect = pygame.Rect(self.X, sh - self.Y, 30,  30)
+        #Geschwindigkeit
         self.speedY= 0
         self.speedX = 20
+        #Kräfte
         self.forceX = 0.0 
         self.forceY = 0.0
+        #Aktion auf standard setzen
+        self.action = standardAction
+
+        self.ticks = 0
+        self.flap = 0
+        #Graphik
+        self.rect = pygame.Rect(self.X, sh - self.Y, 30,  30)
         self.birdImg = pygame.image.load('sprites/sparrow/sparrow.png').convert_alpha()
         self.birdImgFlap = pygame.image.load('sprites/sparrow/sparrow_flap.png').convert_alpha()
         self.sh = sh
-        self.action = standardAction
-        self.ticks = 0
-        self.flap = 0
+
 
     def update(self, dt, decission):
+        '''
+        Neue Position nach Zeit dt mit Newton berechnen.
+        '''
         self.action(decission, self)
         fX = self.forceX	
         fY = -10 + self.forceY
@@ -76,6 +89,9 @@ class Bird:
         
         
     def reset(self):
+        '''
+        Vogel auf Ausgangsposition setzen.
+        '''
         self.X =  80
         self.Y = 250
         self.speedY = 0
@@ -84,6 +100,9 @@ class Bird:
 
 
     def render(self, context):
+        '''
+        Vogel zeichnen
+        '''
         threshold = math.exp(-math.pow(self.forceY,2))
         # birdImg = pygame.image.load('sprites/kit-birds.gif').convert_alpha()
         if(self.forceY <2):
@@ -107,7 +126,7 @@ class birdEnv(gym.Env):
 
     metadata = {'render.modes': ['human','rgb_array']}
 
-    screen_width = 290
+    screen_width = 288
     screen_height = 500
 
     max_FPS = 100
@@ -249,7 +268,7 @@ class birdEnv(gym.Env):
                     (self.screen_width - 140,   self.text_pop.get_height() +self.text_score.get_height()  +20 ))
         
         self.window.blit(self.text_evolve,
-                    (self.screen_width/2 ,   self.text_pop.get_height() +self.text_score.get_height()  +50 ))
+                    (self.screen_width -140 ,   self.text_pop.get_height() +self.text_score.get_height()  +50 ))
         pygame.display.flip()
         return self.getState()
 

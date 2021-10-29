@@ -32,7 +32,12 @@ class Population ():
         self.nets = [copy.deepcopy(net) for _ in range(POPULATION_SIZE)]
         self.computeReward = computeReward
 
+
     def evaluate_on_env (self, env, generateFeatures, MAX_REWARD):
+        '''
+        Mit jedem Netz wird gespielt und die Punktezahl ermittelt. 
+        Danach werden die Netze absteigend anhand ihrer Punktzahl sortiert.
+        '''
         self.population = []
         for net in self.nets:
             state = env.reset()
@@ -51,10 +56,11 @@ class Population ():
     
 
     def playWithFittest(self, env, generateFeatures, MAX_REWARD, num_pop):
-#        print(self.population[0][0])
-        playWithPopulation(env, self.population[0], generateFeatures, MAX_REWARD, self.computeReward, num_pop)
+        #Mit dem besten Netz der Population wird gespielt und das Spiel grafisch dargestellt.
+        play_with_population(env, self.population[0], generateFeatures, MAX_REWARD, self.computeReward, num_pop)
 
-def playWithPopulation(env, pop,generateFeatures, MAX_REWARD, computeReward, num_pop ):
+
+def play_with_population(env, pop,generateFeatures, MAX_REWARD, computeReward, num_pop ):
     state = env.reset()
     reward = 0.0
     done = False
@@ -79,11 +85,14 @@ def playWithPopulation(env, pop,generateFeatures, MAX_REWARD, computeReward, num
     print (reward)
 
 def mutate_population(pop, PARENTS_COUNT, NOISE_STD):
-        pop_mut = Population(0, pop.obs_size, pop.action_size, pop.computeReward, pop.net)
-        pop_mut.nets = [(copy.deepcopy(pop.population[0][1]))]
-        for _ in range(len(pop.population) - 1):
-            parent_idx = np.random.randint(0, PARENTS_COUNT)
-            parent = pop.population[parent_idx][1]
-            net_mut = mutate_net(parent,NOISE_STD )
-            pop_mut.nets.append(net_mut)
-        return pop_mut
+    '''
+    Erzeugt eine Mutation der Population pop mit Mutationsfaktor NOISE_STD und zufälliger Auswahl der besten bis PARENTS_COUNT.
+    '''
+    pop_mut = Population(0, pop.obs_size, pop.action_size, pop.computeReward, pop.net)
+    pop_mut.nets = [(copy.deepcopy(pop.population[0][1]))]
+    for _ in range(len(pop.population) - 1):
+        parent_idx = np.random.randint(0, PARENTS_COUNT)
+        parent = pop.population[parent_idx][1]
+        net_mut = mutate_net(parent,NOISE_STD )
+        pop_mut.nets.append(net_mut)
+    return pop_mut
